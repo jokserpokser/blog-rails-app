@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+# blog-rails-app
+Blog App while Learning Ruby on Rails
