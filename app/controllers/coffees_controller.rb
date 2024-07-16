@@ -1,25 +1,20 @@
 class CoffeesController < ApplicationController
   before_action :set_coffee, only: %i[ show edit update destroy ]
 
-  # GET /coffees or /coffees.json
   def index
     @coffees = Coffee.all
   end
 
-  # GET /coffees/1 or /coffees/1.json
   def show
   end
 
-  # GET /coffees/new
   def new
     @coffee = Coffee.new
   end
 
-  # GET /coffees/1/edit
   def edit
   end
 
-  # POST /coffees or /coffees.json
   def create
     @coffee = Coffee.new(coffee_params)
 
@@ -34,7 +29,6 @@ class CoffeesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /coffees/1 or /coffees/1.json
   def update
     respond_to do |format|
       if @coffee.update(coffee_params)
@@ -47,7 +41,6 @@ class CoffeesController < ApplicationController
     end
   end
 
-  # DELETE /coffees/1 or /coffees/1.json
   def destroy
     @coffee.destroy!
 
@@ -58,12 +51,10 @@ class CoffeesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_coffee
       @coffee = Coffee.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def coffee_params
       params.require(:coffee).permit(:name, :price)
     end
